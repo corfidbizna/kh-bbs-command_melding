@@ -1,7 +1,9 @@
 var app = Vue.createApp({
     data: function() {
         return {
-            commands: commands
+            commands: commands,
+            characters: ['Terra', 'Ventus', 'Aqua'],
+            activeCharacterFilter: null, 
         };
     },
     computed: {
@@ -17,6 +19,21 @@ var app = Vue.createApp({
                 pattern: 'Pattern',
                 availability: 'Availability'
             };
+        },
+        filteredCommands: function() {
+            var result = this.commands;
+            var character = this.activeCharacterFilter;
+            if (character) {
+                result = result.filter(function(command) {
+                    return command.availability.includes(character);
+                })
+            }
+            return result;
+        },
+    },
+    methods: {
+        setActiveCharacterFilter: function(character) {
+            this.activeCharacterFilter = character;
         }
-    }
+    },
 }).mount('#app');

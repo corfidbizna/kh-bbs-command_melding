@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Command Melding</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <div id="app">
         <h1>Number Of Commands: {{numberOfCommands}}</h1>
+        <div class="character-filter-buttons">
+            <button 
+                v-for="character in characters"
+                :key="character"
+                class="character-buttons"
+                @click="setActiveCharacterFilter(character)"
+            >{{character}}</button>
+            <button
+                @click="setActiveCharacterFilter(null)"
+            >x</button>
+        </div>
+        <div><b>Current Character Filter: {{activeCharacterFilter || 'None'}}</b>
+        </div>
         <table id="command-list">
             <thead>
                 <tr>
@@ -20,8 +34,8 @@
             </thead>
             <tbody>
                 <tr 
-                    v-for="row in commands"
-                    :key="row.name"
+                    v-for="row in filteredCommands"
+                    :key="row.name + '-' + row.ingredients.join(',')"
                 >
                     <td
                         v-for="(label, propertyName) in columns"
