@@ -1,3 +1,7 @@
+// ==================================
+//              Patterns
+// ==================================
+
 var commandPatterns = [
     {
         pattern: "A",
@@ -160,6 +164,243 @@ var commandPatterns = [
         abounding: "EXP Walker"
     },
 ];
+
+// ==================================
+//              Abilities
+// ==================================
+
+var prizeAbilities = [
+    {
+        type: "Prize",
+        name: "Treasure Magnet",
+        nameJP: "ドロー",
+        number: 5,
+        description: "Automatically scoops up nearby prizes for you. Multi-install the ability to increase range. ",
+        crystal: "Hungry"
+    },
+    {
+        type: "Prize",
+        name: "HP Prize Plus",
+        nameJP: "HPプライズアップ",
+        number: 3,
+        description: "Increases the number of HP prizes enemies drop. Multi-install the ability for even more prizes. ",
+        crystal: "Hungry"
+    },
+    {
+        type: "Prize",
+        name: "Link Prize Plus",
+        nameJP: "リンクプライズアップ",
+        number: 3,
+        description: "Increases the number of D-Link prizes enemies drop. Multi-install the ability for even more prizes. ",
+        crystal: "Abounding"
+    },
+    {
+        type: "Prize",
+        name: "Lucky Strike",
+        nameJP: "ラックアップ",
+        number: 5,
+        description: "Increases the number of prize boxes enemies drop. Multi-install the ability for even more prizes. ",
+        crystal: "Abounding"
+    }
+];
+
+var statsAbilities = [
+    {
+        name: "HP Boost",
+        nameJP: "HPアップ",
+        number: 3,
+        description: "Increases your HP. Multi-install the ability to bump it up even further. ",
+        crystal: "Soothing"
+    },
+    {
+        name: "Fire Boost",
+        nameJP: "ファイアアップ",
+        number: 3,
+        description: "Increases the damage dealt by your Fire commands. Multi-install the ability to deal even more damage. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Blizzard Boost",
+        nameJP: "ブリザドアップ",
+        number: 3,
+        description: "Increases the damage dealt by your Blizzard commands. Multi-install the ability to deal even more damage. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Thunder Boost",
+        nameJP: "サンダーアップ",
+        number: 3,
+        description: "Increases the damage dealt by your Thunder commands. Multi-install the ability to deal even more damage. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Cure Boost",
+        nameJP: "ケアルアップ",
+        number: 3,
+        description: "Increases the amount of HP you recover with Cure commands. Multi-install the ability to recover even more. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Item Boost",
+        nameJP: "アイテムアップ",
+        number: 3,
+        description: "Increases the effectiveness of recovery item commands. Multi-install the ability for an even larger improvement. ",
+        crystal: "Soothing"
+    },
+    {
+        name: "Attack Haste",
+        nameJP: "アタックヘイスト",
+        number: 5,
+        description: "Shortens the reload time for all attack commands installed in your deck. Multi-install the ability for even quicker reloading. ",
+        crystal: "Fleeting"
+    },
+    {
+        name: "Magic Haste",
+        nameJP: "マジックヘイスト",
+        number: 5,
+        description: "Shortens the reload time for all magic commands installed in your deck. Multi-install the ability for even quicker reloading. ",
+        crystal: "Fleeting"
+    },
+    {
+        name: "Combo F Boost",
+        nameJP: "コンボFアップ",
+        number: 2,
+        description: "Increases the damage dealt by the last blow of your combos. Multi-install the ability to deal even more damage. ",
+        crystal: "Pulsing"
+    },
+    {
+        name: "Finish Boost",
+        nameJP: "コマンドFアップ",
+        number: 2,
+        description: "Increases the damage dealt by your Finish command. Multi-install the ability to deal even more damage. ",
+        crystal: "Pulsing"
+    },
+    {
+        name: "Fire Screen",
+        nameJP: "ファイアガード",
+        number: 2,
+        description: "Increases your resistance to Fire attacks. Multi-install the ability to bump it up even further. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Blizzard Screen",
+        nameJP: "ブリザドガード",
+        number: 2,
+        description: "Increases your resistance to Blizzard attacks. Multi-install the ability to bump it up even further. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Thunder Screen",
+        nameJP: "サンダーガード",
+        number: 2,
+        description: "Increases your resistance to Thunder attacks. Multi-install the ability to bump it up even further. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Dark Screen",
+        nameJP: "ダークガード",
+        number: 2,
+        description: "Increases your resistance to darkness-based attacks. Multi-install the ability to bump it up even further. ",
+        crystal: "Shimmering"
+    },
+    {
+        name: "Reload Boost",
+        nameJP: "リロードブースト",
+        number: 1,
+        description: "Shortens the reload time for all commands installed in your deck whenever your HP falls below 25%. ",
+        crystal: "Fleeting"
+    },
+    {
+        name: "Defender",
+        nameJP: "ディフェンダー",
+        number: 1,
+        description: "Increases your Defense whenever your HP falls below 25%. ",
+        crystal: "Soothing"
+    }
+];
+
+var supportAbilities = [
+    {
+        name: "Zero EXP",
+        nameJP: "EXPゼロ",
+        number: 1,
+        description: "Prevents you from gaining any EXP when you defeat enemies. ",
+        crystal: "N/A"
+    },
+    {
+        name: "Combo Plus",
+        nameJP: "コンボプラス",
+        number: 3,
+        description: "Adds one stroke to your ground combos. Multi-install the ability for even longer combos. ",
+        crystal: "Wellspring"
+    },
+    {
+        name: "Air Combo Plus",
+        nameJP: "エアコンボプラス",
+        number: 3,
+        description: "Adds one stroke to your aerial combos. Multi-install the ability for even longer combos. ",
+        crystal: "Wellspring"
+    },
+    {
+        name: "EXP Chance",
+        nameJP: "EXPチャンス",
+        number: 1,
+        description: "Doubles the EXP you receive whenever your HP falls below 25%. ",
+        crystal: "Abounding"
+    },
+    {
+        name: "EXP Walker",
+        nameJP: "EXPウォーク",
+        number: 1,
+        description: "Awards you 1 EXP for every step you take. ",
+        crystal: "Abounding"
+    },
+    {
+        name: "Damage Syphon",
+        nameJP: "ダメージアスピル",
+        number: 1,
+        description: "Restores some of the Focus Gauge when you take damage. ",
+        crystal: "Soothing"
+    },
+    {
+        name: "Second Chance",
+        nameJP: "ラストリーヴ",
+        number: "1",
+        description: "Ensures you always retain 1 HP after an attack that would otherwise finish you off, unless you are already down to 1 HP. ",
+        crystal: "Pulsing"
+    },
+    {
+        name: "Once More",
+        nameJP: "コンボリーヴ",
+        number: 1,
+        description: "Ensures you always retain 1 HP throughout a combo that would otherwise finish you off, unless you are already down to 1 HP when the first attack hits. ",
+        crystal: "Wellspring "
+    },
+    {
+        name: "Scan",
+        nameJP: "ライブラ",
+        number: 1,
+        description: "Displays the HP of the targeted enemy. ",
+        crystal: "N/A"
+    },
+    {
+        name: "Leaf Bracer",
+        nameJP: "リーフベール",
+        number: 1,
+        description: "Prevents you from taking damage while using Cure commands. ",
+        crystal: "Pulsing"
+    }
+];
+
+var abilities = [].concat(
+    prizeAbilities,
+    statsAbilities,
+    supportAbilities
+);
+
+// ==================================
+//              Commands
+// ==================================
 
 var attackCommands = [
     {
@@ -2542,8 +2783,8 @@ var shotlockCommands = [
 ];
 
 var commands = [].concat(
-    attackCommands, 
-    magicCommands, 
-    actionCommands, 
+    attackCommands,
+    magicCommands,
+    actionCommands,
     shotlockCommands
 );
