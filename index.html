@@ -23,12 +23,6 @@
         </div>
         <div><b>Current Character Filter: {{activeCharacterFilter || 'None'}}</b>
         </div>
-        <command-type-icon icon="attack"></command-type-icon>
-        <command-type-icon icon="magic"></command-type-icon>
-        <command-type-icon icon="mobility"></command-type-icon>
-        <command-type-icon icon="block"></command-type-icon>
-        <command-type-icon icon="reprisal"></command-type-icon>
-        <command-type-icon icon="shotlock"></command-type-icon>
         <table id="command-list">
             <thead>
                 <tr>
@@ -47,7 +41,15 @@
                         v-for="(label, propertyName) in columns"
                         :key="propertyName"
                         :class="propertyName"
-                    >{{row[propertyName]}}</td>
+                    >
+                        <command-type-icon 
+                            v-if="propertyName === 'type'"
+                            :icon="row[propertyName]"
+                        ></command-type-icon>
+                        <span
+                            v-else
+                        >{{row[propertyName]}}</span>
+                    </td>
                 </tr>
             </tbody>
         </table>
