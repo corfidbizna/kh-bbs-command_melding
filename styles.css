@@ -1,3 +1,11 @@
 .character-buttons {
     width: 25%;
 }
+.command-type-icon {
+    display: inline-block;
+    width: 64px; 
+    height: 64px; 
+    background-image: url("command_icons.png");
+    overflow: hidden;
+    color: rgba(0,0,0,0);
+}

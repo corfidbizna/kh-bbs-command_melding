@@ -36,4 +36,4 @@ var app = Vue.createApp({
             this.activeCharacterFilter = character;
         }
     },
-}).mount('#app');
+});
