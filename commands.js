@@ -2426,7 +2426,7 @@ var magicCommands = [
 
 var actionCommands = [
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Homing Slide',
         ingredients: ['Sliding Dash', 'Magnera'],
         percent: 100,
@@ -2434,7 +2434,7 @@ var actionCommands = [
         availability: ['Ventus', 'Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Homing Slide',
         ingredients: ['Sliding Dash', 'Air Slide'],
         percent: 100,
@@ -2442,7 +2442,7 @@ var actionCommands = [
         availability: ['Ventus', 'Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Homing Slide',
         ingredients: ['Magnet', 'Air Slide'],
         percent: 100,
@@ -2450,7 +2450,7 @@ var actionCommands = [
         availability: ['Ventus', 'Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Thunder Roll',
         ingredients: ['Thunder Surge', 'Dodge Roll'],
         percent: 80,
@@ -2458,7 +2458,7 @@ var actionCommands = [
         availability: ['Ventus']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Thunder Roll',
         ingredients: ['Thundaga', 'Dodge Roll'],
         percent: 80,
@@ -2466,7 +2466,7 @@ var actionCommands = [
         availability: ['Ventus']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Thunder Roll',
         ingredients: ['Stun Block', 'Dodge Roll'],
         percent: 80,
@@ -2474,7 +2474,7 @@ var actionCommands = [
         availability: ['Ventus']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Firewheel',
         ingredients: ['Firaga', 'Cartwheel'],
         percent: 100,
@@ -2482,7 +2482,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Firewheel',
         ingredients: ['Fission Firaga', 'Cartwheel'],
         percent: 100,
@@ -2490,7 +2490,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Firewheel',
         ingredients: ['Fire Surge', 'Cartwheel'],
         percent: 90,
@@ -2498,7 +2498,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Ice Slide',
         ingredients: ['Blizzard Edge', 'Air Slide'],
         percent: 100,
@@ -2506,7 +2506,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Ice Slide',
         ingredients: ['Blizzaga', 'Air Slide'],
         percent: 100,
@@ -2514,7 +2514,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Fire Glide',
         ingredients: ['Fire Surge', 'Glide'],
         percent: 100,
@@ -2522,7 +2522,7 @@ var actionCommands = [
         availability: ['Ventus']
     },
     {
-        type: 'Action',
+        type: 'Mobility',
         name: 'Fire Glide',
         ingredients: ['Firaga', 'Glide'],
         percent: 100,
@@ -2530,7 +2530,7 @@ var actionCommands = [
         availability: ['Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Renewal Block',
         ingredients: ['Curaga', 'Block'],
         percent: 100,
@@ -2538,7 +2538,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Renewal Block',
         ingredients: ['Esuna', 'Block'],
         percent: 100,
@@ -2546,7 +2546,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Stun Block',
         ingredients: ['Stun Edge', 'Block'],
         percent: 100,
@@ -2554,7 +2554,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Stun Block',
         ingredients: ['Thundaga', 'Block'],
         percent: 100,
@@ -2562,7 +2562,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Poison Block',
         ingredients: ['Poison Edge', 'Block'],
         percent: 80,
@@ -2570,7 +2570,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Poison Block',
         ingredients: ['Poison', 'Block'],
         percent: 80,
@@ -2578,7 +2578,7 @@ var actionCommands = [
         availability: ['Terra', 'Ventus']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Renewal Barrier',
         ingredients: ['Curaga', 'Barrier'],
         percent: 100,
@@ -2586,7 +2586,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Renewal Barrier',
         ingredients: ['Esuna', 'Barrier'],
         percent: 100,
@@ -2594,7 +2594,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Confuse Barrier',
         ingredients: ['Confusion Strike', 'Barrier'],
         percent: 100,
@@ -2602,7 +2602,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Confuse Barrier',
         ingredients: ['Confuse', 'Barrier'],
         percent: 100,
@@ -2610,7 +2610,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Block',
         name: 'Stop Barrier',
         ingredients: ['Stopga', 'Barrier'],
         percent: 80,
@@ -2618,7 +2618,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Reprisal',
         name: 'Payback Fang',
         ingredients: ['Sliding Dash', 'Counter Hammer'],
         percent: 100,
@@ -2626,7 +2626,7 @@ var actionCommands = [
         availability: ['Terra']
     },
     {
-        type: 'Action',
+        type: 'Reprisal',
         name: 'Payback Raid',
         ingredients: ['Sliding Dash', 'Strike Raid'],
         percent: 100,
@@ -2634,7 +2634,7 @@ var actionCommands = [
         availability: ['Ventus']
     },
     {
-        type: 'Action',
+        type: 'Reprisal',
         name: 'Payback Surge',
         ingredients: ['Sliding Dash', 'Fire Surge'],
         percent: 100,
@@ -2642,7 +2642,7 @@ var actionCommands = [
         availability: ['Aqua']
     },
     {
-        type: 'Action',
+        type: 'Reprisal',
         name: 'Payback Surge',
         ingredients: ['Sliding Dash', 'Thunder Surge'],
         percent: 100,
