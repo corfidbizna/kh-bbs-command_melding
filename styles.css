@@ -1,6 +1,25 @@
-.character-buttons {
-    width: 25%;
+.character-checkboxes {
+    display: inline-block;
+    width: 18%;
+    background-color: #DDD;
+    padding: 4px 8px;
+    margin: 2px; 
+    border-radius: 4px;
 }
+button.character-checkboxes {
+    width: auto;
+}
+
+.character-checkboxes.active.Terra {
+    background-color: #CAA;
+}
+.character-checkboxes.active.Ventus {
+    background-color: #ACA;
+}
+.character-checkboxes.active.Aqua {
+    background-color: #AAC;
+}
+
 .command-type-icon {
     display: inline-block;
     width: 64px; 
@@ -9,3 +28,6 @@
     overflow: hidden;
     color: rgba(0,0,0,0);
 }
+
+
+

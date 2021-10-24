@@ -9,19 +9,27 @@
 </head>
 <body>
     <div id="app">
-        <h1>Number Of Commands: {{numberOfCommands}}</h1>
-        <div class="character-filter-buttons">
-            <button 
-                v-for="character in characters"
+        <h1>Number Of Commands: {{filteredCommands.length}} out of {{numberOfCommands}}</h1>
+        <div class="character-filter">
+            <label 
+                v-for="(value, character) in characters"
                 :key="character"
-                class="character-buttons"
-                @click="setActiveCharacterFilter(character)"
-            >{{character}}</button>
+                class="character-checkboxes"
+                :class="{
+                    active: characters[character],
+                    [character]: true,
+                }"
+            >
+                <input 
+                    type="checkbox"
+                    v-model="characters[character]"
+                />
+                <span>{{character}}</span>
+            </label>
             <button
-                @click="setActiveCharacterFilter(null)"
+                class="character-checkboxes"
+                @click="resetCharacterFilter()"
             >x</button>
-        </div>
-        <div><b>Current Character Filter: {{activeCharacterFilter || 'None'}}</b>
         </div>
         <table id="command-list">
             <thead>

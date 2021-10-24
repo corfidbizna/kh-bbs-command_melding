@@ -2,8 +2,11 @@ var app = Vue.createApp({
     data: function() {
         return {
             commands: commands,
-            characters: ['Terra', 'Ventus', 'Aqua'],
-            activeCharacterFilter: null, 
+            characters: {
+                Terra: true, 
+                Ventus: true, 
+                Aqua: true,
+            },
         };
     },
     computed: {
@@ -21,19 +24,25 @@ var app = Vue.createApp({
             };
         },
         filteredCommands: function() {
-            var result = this.commands;
-            var character = this.activeCharacterFilter;
-            if (character) {
-                result = result.filter(function(command) {
-                    return command.availability.includes(character);
+            var characters = this.characters; 
+            var characterNames = Object.keys(characters);
+            var result = this.commands.filter(function(command) {
+                var keep = false;
+                characterNames.forEach(function(characterName) {
+                    if (characters[characterName]) {
+                        keep = keep || command.availability.includes(characterName);
+                    }
                 })
-            }
+                return keep;
+            })
             return result;
         },
     },
     methods: {
-        setActiveCharacterFilter: function(character) {
-            this.activeCharacterFilter = character;
+        resetCharacterFilter: function() {
+            this.characters.Terra = true;
+            this.characters.Ventus = true;
+            this.characters.Aqua = true;
         }
     },
 });

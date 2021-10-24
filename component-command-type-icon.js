@@ -1,7 +1,6 @@
 var iconIndexes = {
     attack: 0,
     magic: 1,
-    //action: 2,
     mobility: 2,
     block: 3,
     reprisal: 4,
