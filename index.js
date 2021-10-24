@@ -15,7 +15,8 @@ var app = Vue.createApp({
         },
         columns: function() {
             return {
-                type: 'Type',
+                //type: 'Type',
+                type: '',
                 name: 'Command Name',
                 ingredients: 'Ingredients',
                 percent: '%',

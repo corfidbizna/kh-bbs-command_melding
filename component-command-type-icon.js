@@ -17,7 +17,7 @@ app.component('command-type-icon', {
         offsetStyle: function() {
             var icon = this.icon.toLocaleLowerCase();
             var index = iconIndexes[icon] || 0;
-            var iconWidth = 64;
+            var iconWidth = 16;
             return `background-position: ${-iconWidth * index}px 0px;`;
         },
     },
