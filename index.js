@@ -21,7 +21,7 @@ var app = Vue.createApp({
                 ingredients: 'Ingredients',
                 percent: '%',
                 pattern: 'Pattern',
-                availability: 'Availability'
+                //availability: 'Availability'
             };
         },
         filteredCommands: function() {

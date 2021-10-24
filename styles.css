@@ -1,6 +1,14 @@
+body {
+    font-family: sans-serif;
+}
+
+.character-filter {
+    padding-bottom: 32px;
+}
+
 .character-checkboxes {
     display: inline-block;
-    width: 18%;
+    width: 237px;
     background-color: #DDD;
     padding: 4px 8px;
     margin: 2px; 
@@ -18,6 +26,44 @@ button.character-checkboxes {
 }
 .character-checkboxes.active.Aqua {
     background-color: #AAC;
+}
+
+#command-list {
+    width: 800px;
+    border-collapse: collapse;
+}
+#command-list th, 
+#command-list td {
+    padding: 4px;
+    border: 1px solid #888;
+}
+#command-list td.type {
+    text-align: center;
+}
+#command-list td.percent {
+    text-align: right;
+}
+
+tr.Terra {
+    background-color: #FDD;
+}
+tr.Ventus {
+    background-color: #DFD;
+}
+tr.Aqua {
+    background-color: #DDF;
+}
+tr.Terra.Ventus {
+    background-color: #FFD;
+}
+tr.Ventus.Aqua {
+    background-color: #DFF;
+}
+tr.Terra.Aqua {
+    background-color: #FDF;
+}
+tr.Terra.Ventus.Aqua {
+    background-color: #FFF;
 }
 
 .command-type-icon {

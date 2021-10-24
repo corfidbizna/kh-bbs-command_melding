@@ -44,6 +44,7 @@
                 <tr 
                     v-for="row in filteredCommands"
                     :key="row.name + '-' + row.ingredients.join(',')"
+                    :class="row.availability"
                 >
                     <td
                         v-for="(label, propertyName) in columns"
