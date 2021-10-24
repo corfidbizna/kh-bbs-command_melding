@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>Number Of Commands: {{filteredCommands.length}} out of {{numberOfCommands}}</h1>
+        <h1>Commands: {{filteredCommands.length}} out of {{numberOfCommands}}</h1>
         <div class="character-filter">
             <label 
                 v-for="(value, character) in characters"
@@ -57,7 +57,21 @@
                         ></command-type-icon>
                         <span
                             v-else
-                        >{{row[propertyName]}}</span>
+                        >
+                            <span
+                                v-if="propertyName === 'ingredients'"
+                            >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
+                            <span
+                                v-else
+                            >
+                                <span
+                                    v-if="propertyName === 'percent'"
+                                >{{row[propertyName]}}%</span>
+                            </span>
+                            <span
+                                v-else
+                            >{{row[propertyName]}}</span>
+                        </span>
                     </td>
                 </tr>
             </tbody>

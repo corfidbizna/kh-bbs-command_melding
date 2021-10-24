@@ -17,10 +17,10 @@ var app = Vue.createApp({
             return {
                 //type: 'Type',
                 type: '',
-                name: 'Command Name',
+                name: 'Name',
                 ingredients: 'Ingredients',
-                percent: '%',
-                pattern: 'Pattern',
+                percent: 'Craft %',
+                pattern: '',
                 //availability: 'Availability'
             };
         },

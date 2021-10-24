@@ -2,13 +2,15 @@ body {
     font-family: sans-serif;
 }
 
+/* ================================= */
+/*    Character Filter Checkboxes    */
+/* ================================= */
 .character-filter {
     padding-bottom: 32px;
 }
-
 .character-checkboxes {
     display: inline-block;
-    width: 237px;
+    width: 137px;
     background-color: #DDD;
     padding: 4px 8px;
     margin: 2px; 
@@ -17,7 +19,6 @@ body {
 button.character-checkboxes {
     width: auto;
 }
-
 .character-checkboxes.active.Terra {
     background-color: #CAA;
 }
@@ -28,14 +29,18 @@ button.character-checkboxes {
     background-color: #AAC;
 }
 
+/* ================================= */
+/*           Command Table           */
+/* ================================= */
 #command-list {
-    width: 800px;
+    width: 500px;
     border-collapse: collapse;
+    border: 2px solid #888;
 }
 #command-list th, 
 #command-list td {
     padding: 4px;
-    border: 1px solid #888;
+    border-bottom: 1px solid #CCC;
 }
 #command-list td.type {
     text-align: center;
@@ -43,7 +48,7 @@ button.character-checkboxes {
 #command-list td.percent {
     text-align: right;
 }
-
+/* Row Color based on Availability */ 
 tr.Terra {
     background-color: #FDD;
 }
@@ -66,6 +71,9 @@ tr.Terra.Ventus.Aqua {
     background-color: #FFF;
 }
 
+/* ================================= */
+/*           Command Icons           */
+/* ================================= */
 .command-type-icon {
     display: inline-block;
     width: 16px; 
