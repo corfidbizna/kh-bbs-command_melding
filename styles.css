@@ -23,8 +23,8 @@ body {
     background-color: #000;
     background: repeating-linear-gradient(
         to right, 
-        #000 0vw, 
-        #006 25vw);
+        #000 0, 
+        #006 20rem);
     animation-name: slide-background; 
     animation-duration: 7.0s;
     animation-iteration-count: infinite;
@@ -32,10 +32,10 @@ body {
 }
 @keyframes slide-background {
     0% {
-      background-position-x: 0vw;
+      background-position-x: 0rem;
     }
     100% {
-      background-position-x: 25vw;
+      background-position-x: 20rem;
     }
   }
 
