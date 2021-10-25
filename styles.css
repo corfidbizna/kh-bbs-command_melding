@@ -21,18 +21,12 @@ body {
     font-family: 'Saira Condensed', sans-serif;
     color: #FFF;
     background-color: #000;
-    background: linear-gradient(
+    background: repeating-linear-gradient(
         to right, 
-        #000 0%, 
-        #006 25%, 
-        #000 25%, 
-        #006 50%, 
-        #000 50%,
-        #006 75%, 
-        #000 75%,
-        #006 100%);
+        #000 0vw, 
+        #006 25vw);
     animation-name: slide-background; 
-    animation-duration: 21.0s;
+    animation-duration: 7.0s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -41,7 +35,7 @@ body {
       background-position-x: 0vw;
     }
     100% {
-      background-position-x: 100vw;
+      background-position-x: 25vw;
     }
   }
 
