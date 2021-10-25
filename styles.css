@@ -1,6 +1,49 @@
-body {
-    font-family: sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600&display=swap');
+@font-face {
+    font-family: 'KH2 ALL MENU';
+    src: url('KH2ALLMENUItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'KH2 ALL MENU';
+    font-weight: normal;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Saira Condensed', sans-serif;
+    color: #FFF;
+    background-color: #000;
+    background: linear-gradient(
+        to right, 
+        #000 0%, 
+        #006 25%, 
+        #000 25%, 
+        #006 50%, 
+        #000 50%,
+        #006 75%, 
+        #000 75%,
+        #006 100%);
+    animation-name: slide-background; 
+    animation-duration: 21.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes slide-background {
+    0% {
+      background-position-x: 0vw;
+    }
+    100% {
+      background-position-x: 100vw;
+    }
+  }
 
 /* ================================= */
 /*    Character Filter Checkboxes    */
@@ -10,23 +53,80 @@ body {
 }
 .character-checkboxes {
     display: inline-block;
-    width: 137px;
-    background-color: #DDD;
+    width: 152px;
+    background-color: #8888;
+    background-blend-mode: screen;
     padding: 4px 8px;
     margin: 2px; 
     border-radius: 4px;
+    line-height: 1.5em;
+    font-size: 1rem;
+    vertical-align: top;
 }
 button.character-checkboxes {
     width: auto;
+    color: #FFF;
+    border-width: 0;
 }
 .character-checkboxes.active.Terra {
-    background-color: #CAA;
+    background-color: #F448;
 }
 .character-checkboxes.active.Ventus {
-    background-color: #ACA;
+    background-color: #4F48;
 }
 .character-checkboxes.active.Aqua {
-    background-color: #AAC;
+    background-color: #44F8;
+}
+
+/* ================================= */
+/*           Command Boxes           */
+/* ================================= */
+.command-slot {
+    position: relative; 
+}
+.command-slot .command-type-icon {
+    position: absolute; 
+    top: -0.05em;
+    left: -0.25em; 
+}
+.command-slot-box {
+    display: block;
+    background: linear-gradient(135deg, #FFF6 0.375em, transparent 0.5em);
+    height: 1.5em;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 600;
+    text-shadow: 0.075em 0.075em #000;
+    padding: 0em 1.5em;
+    border-top-right-radius: 0.75em;
+    border-bottom-right-radius: 0.75em;
+    clip-path: polygon(0.45em 0, 100% 0, 100% 1.5em, 0 1.5em, 0 0.45em);
+    box-shadow: 
+        inset -0.1em -0.1em 0.1em #0006, 
+        inset 0.1em 0.1em 0.1em #FFF6;
+}
+.command-slot-box.battle {
+    background-color: #001F91;
+}
+.command-slot-box.action {
+    background-color: #A92116;
+}
+.command-slot-box.shotlock {
+    background-color: #4Fb235;
+}
+
+/* ================================= */
+/*           Command Icons           */
+/* ================================= */
+.command-type-icon {
+    display: inline-block;
+    width: 1.75em; 
+    height: 1.75em; 
+    background-image: url("command_icons.png");
+    background-size: 600%;
+    overflow: hidden;
+    color: rgba(0,0,0,0);
 }
 
 /* ================================= */
@@ -35,54 +135,38 @@ button.character-checkboxes {
 #command-list {
     width: 500px;
     border-collapse: collapse;
-    border: 2px solid #888;
+    border: 2px solid #000;
 }
 #command-list th, 
 #command-list td {
-    padding: 4px;
-    border-bottom: 1px solid #CCC;
-}
-#command-list td.type {
-    text-align: center;
+    padding: 1px 4px;
+    border-bottom: 1px solid #0008;
+    background-blend-mode: screen;
 }
 #command-list td.percent {
     text-align: right;
 }
 /* Row Color based on Availability */ 
 tr.Terra {
-    background-color: #FDD;
+    background-color: #F004;
 }
 tr.Ventus {
-    background-color: #DFD;
+    background-color: #0F04;
 }
 tr.Aqua {
-    background-color: #DDF;
+    background-color: #00F4;
 }
 tr.Terra.Ventus {
-    background-color: #FFD;
+    background-color: #FF04;
 }
 tr.Ventus.Aqua {
-    background-color: #DFF;
+    background-color: #0FF4;
 }
 tr.Terra.Aqua {
-    background-color: #FDF;
+    background-color: #F0F4;
 }
 tr.Terra.Ventus.Aqua {
-    background-color: #FFF;
+    background-color: #FFF4;
 }
-
-/* ================================= */
-/*           Command Icons           */
-/* ================================= */
-.command-type-icon {
-    display: inline-block;
-    width: 16px; 
-    height: 16px; 
-    background-image: url("command_icons.png");
-    background-size: 600%;
-    overflow: hidden;
-    color: rgba(0,0,0,0);
-}
-
 
 

@@ -1348,6 +1348,9 @@ var attackCommands = [
         availability: ['Aqua']
     }
 ];
+attackCommands.forEach(function(item) {
+    item.category = 'battle';
+})
 
 var magicCommands = [
     {
@@ -2423,6 +2426,9 @@ var magicCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     }
 ];
+magicCommands.forEach(function(item) {
+    item.category = 'battle';
+})
 
 var actionCommands = [
     {
@@ -2650,6 +2656,9 @@ var actionCommands = [
         availability: ['Aqua']
     }
 ];
+actionCommands.forEach(function(item) {
+    item.category = 'action';
+})
 
 var shotlockCommands = [
     {
@@ -2781,6 +2790,9 @@ var shotlockCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     }
 ];
+shotlockCommands.forEach(function(item) {
+    item.category = 'shotlock';
+})
 
 var commands = [].concat(
     attackCommands,

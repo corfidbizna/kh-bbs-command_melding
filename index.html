@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>Commands: {{filteredCommands.length}} out of {{numberOfCommands}}</h1>
+        <h1>Commands - {{filteredCommands.length}} out of {{numberOfCommands}}</h1>
         <div class="character-filter">
             <label 
                 v-for="(value, character) in characters"
@@ -51,36 +51,31 @@
                         :key="propertyName"
                         :class="propertyName"
                     >
-                        <command-type-icon 
-                            v-if="propertyName === 'type'"
-                            :icon="row[propertyName]"
-                        ></command-type-icon>
+                        <command-slot
+                            v-if="propertyName === 'name'"
+                            :name="row.name"
+                            :category="row.category"
+                            :type="row.type"
+                        ></command-slot>
+                        <span
+                            v-else-if="propertyName === 'ingredients'"
+                        >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
+                        <span
+                            v-else-if="propertyName === 'percent'"
+                        >{{row[propertyName]}}%</span>
                         <span
                             v-else
-                        >
-                            <span
-                                v-if="propertyName === 'ingredients'"
-                            >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
-                            <span
-                                v-else
-                            >
-                                <span
-                                    v-if="propertyName === 'percent'"
-                                >{{row[propertyName]}}%</span>
-                            </span>
-                            <span
-                                v-else
-                            >{{row[propertyName]}}</span>
-                        </span>
+                        >{{row[propertyName]}}</span>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
-    <script src="commands.js"></script>
+    <script src="data.js"></script>
     <script src="index.js"></script>
     <script src="component-command-type-icon.js"></script>
+    <script src="component-command-slot.js"></script>
     <script>var mountedApp = app.mount('#app');</script>
 </body>
 </html>
