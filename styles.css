@@ -20,11 +20,13 @@ h1 {
 body {
     font-family: 'Saira Condensed', sans-serif;
     color: #FFF;
-    background-color: #000;
-    background: repeating-linear-gradient(
+   background-color: #000;
+    background: repeating-linear-gradient( 
         to right, 
         #000 0, 
-        #006 20rem);
+        #006 100%
+    );
+    background-size: 20rem 100%;
     animation-name: slide-background; 
     animation-duration: 7.0s;
     animation-iteration-count: infinite;
