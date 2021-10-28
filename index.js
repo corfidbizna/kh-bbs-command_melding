@@ -19,7 +19,7 @@ var app = Vue.createApp({
                 //type: '',
                 name: 'Name',
                 ingredients: 'Ingredients',
-                percent: 'Craft %',
+                //percent: 'Craft %',
                 pattern: '',
                 //availability: 'Availability'
             };

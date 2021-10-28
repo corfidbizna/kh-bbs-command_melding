@@ -80,10 +80,16 @@ button.character-checkboxes {
 .command-slot {
     position: relative; 
 }
-.command-slot .command-type-icon {
+.command-slot .overlap {
     position: absolute; 
     top: -0.05em;
     left: -0.25em; 
+}
+.command-slot .percentage {
+    position: absolute; 
+    top: 0;
+    right: 1em; 
+    color: #ED0;
 }
 .command-slot-box {
     display: block;
@@ -120,7 +126,7 @@ button.character-checkboxes {
     width: 1.75em; 
     height: 1.75em; 
     background-image: url("command_icons.png");
-    background-size: 600%;
+    background-size: 1000%;
     overflow: hidden;
     color: rgba(0,0,0,0);
 }

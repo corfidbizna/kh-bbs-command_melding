@@ -56,13 +56,11 @@
                             :name="row.name"
                             :category="row.category"
                             :type="row.type"
+                            :percent="row.percent"
                         ></command-slot>
                         <span
                             v-else-if="propertyName === 'ingredients'"
                         >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
-                        <span
-                            v-else-if="propertyName === 'percent'"
-                        >{{row[propertyName]}}%</span>
                         <span
                             v-else
                         >{{row[propertyName]}}</span>
