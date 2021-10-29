@@ -2,8 +2,18 @@
 //              Patterns
 // ==================================
 
-var commandPatterns = [
-    {
+var commandPatternMap = {
+    '-': {
+        pattern: "-",
+        shimmering: "",
+        fleeting: "",
+        pulsing: "",
+        wellspring: "",
+        soothing: "",
+        hungry: "",
+        abounding: ""
+    },
+    A: {
         pattern: "A",
         shimmering: "Fire Boost",
         fleeting: "Magic Haste",
@@ -13,7 +23,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "Link Prize Plus"
     },
-    {
+    B: {
         pattern: "B",
         shimmering: "Fire Boost",
         fleeting: "Reload Boost",
@@ -23,7 +33,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "EXP Chance"
     },
-    {
+    C: {
         pattern: "C",
         shimmering: "Fire Screen",
         fleeting: "Attack Haste",
@@ -33,7 +43,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "Link Prize Plus"
     },
-    {
+    D: {
         pattern: "D",
         shimmering: "Fire Screen",
         fleeting: "Attack Haste",
@@ -43,7 +53,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "Link Prize Plus"
     },
-    {
+    E: {
         pattern: "E",
         shimmering: "Blizzard Boost",
         fleeting: "Magic Haste",
@@ -53,7 +63,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "Lucky Strike"
     },
-    {
+    F: {
         pattern: "F",
         shimmering: "Blizzard Boost",
         fleeting: "Reload Boost",
@@ -63,7 +73,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "Lucky Strike"
     },
-    {
+    G: {
         pattern: "G",
         shimmering: "Blizzard",
         fleeting: "Attack Haste",
@@ -73,7 +83,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "Luck Boost"
     },
-    {
+    H: {
         pattern: "H",
         shimmering: "Blizzard Screen",
         fleeting: "Magic Haste",
@@ -83,7 +93,7 @@ var commandPatterns = [
         hungry: "HP Prize Plus",
         abounding: "EXP Walker"
     },
-    {
+    I: {
         pattern: "I",
         shimmering: "Thunder Boost",
         fleeting: "Magic Haste",
@@ -93,7 +103,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "Link Prize Plus"
     },
-    {
+    J: {
         pattern: "J",
         shimmering: "Thunder Boost",
         fleeting: "Reload Haste",
@@ -103,7 +113,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "EXP Chance"
     },
-    {
+    K: {
         pattern: "K",
         shimmering: "Thunder Screen",
         fleeting: "Attack Haste",
@@ -113,7 +123,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "Link Prize Plus"
     },
-    {
+    L: {
         pattern: "L",
         shimmering: "Thunder Screen",
         fleeting: "Attack Haste",
@@ -123,7 +133,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "Lucky Strike"
     },
-    {
+    M: {
         pattern: "M",
         shimmering: "Cure Boost",
         fleeting: "Magic Haste",
@@ -133,7 +143,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "Lucky Strike"
     },
-    {
+    N: {
         pattern: "N",
         shimmering: "Cure Boost",
         fleeting: "Reload Boost",
@@ -143,7 +153,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "Lucky Strike"
     },
-    {
+    O: {
         pattern: "O",
         shimmering: "Dark Screen",
         fleeting: "Attack Haste",
@@ -153,7 +163,7 @@ var commandPatterns = [
         hungry: "Treasure Magnet",
         abounding: "Lucky Strike"
     },
-    {
+    P: {
         pattern: "P",
         shimmering: "Dark Screen",
         fleeting: "Magic Haste",
@@ -162,8 +172,8 @@ var commandPatterns = [
         soothing: "Item Boost",
         hungry: "Treasure Magnet",
         abounding: "EXP Walker"
-    },
-];
+    }
+};
 
 // ==================================
 //              Abilities
@@ -1348,7 +1358,7 @@ var attackCommands = [
         availability: ['Aqua']
     }
 ];
-attackCommands.forEach(function(item) {
+attackCommands.forEach(function (item) {
     item.category = 'battle';
 })
 
@@ -2426,7 +2436,7 @@ var magicCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     }
 ];
-magicCommands.forEach(function(item) {
+magicCommands.forEach(function (item) {
     item.category = 'battle';
 })
 
@@ -2656,7 +2666,7 @@ var actionCommands = [
         availability: ['Aqua']
     }
 ];
-actionCommands.forEach(function(item) {
+actionCommands.forEach(function (item) {
     item.category = 'action';
 })
 
@@ -2790,7 +2800,7 @@ var shotlockCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     }
 ];
-shotlockCommands.forEach(function(item) {
+shotlockCommands.forEach(function (item) {
     item.category = 'shotlock';
 })
 

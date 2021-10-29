@@ -2,6 +2,7 @@ var app = Vue.createApp({
     data: function() {
         return {
             commands: commands,
+            patternMap: commandPatternMap,
             characters: {
                 Terra: true, 
                 Ventus: true, 
@@ -20,8 +21,15 @@ var app = Vue.createApp({
                 name: 'Name',
                 ingredients: 'Ingredients',
                 //percent: 'Craft %',
-                pattern: '',
+                //pattern: '',
                 //availability: 'Availability'
+                shimmering: "Shimmering",
+                fleeting: "Fleeting",
+                pulsing: "Pulsing",
+                wellspring: "Wellspring",
+                soothing: "Soothing",
+                hungry: "Hungry",
+                abounding: "Abounding"
             };
         },
         filteredCommands: function() {

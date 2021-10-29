@@ -9,6 +9,7 @@ var iconIndexes = {
     abilityPrize: 7,
     abilityStat: 8,
     abilitySupport: 9,
+    abilityBlank: 10,
 };
 app.component('command-type-icon', {
     props: {

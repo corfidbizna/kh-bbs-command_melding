@@ -35,8 +35,11 @@
             <thead>
                 <tr>
                     <th
-                        v-for="(label, propertyName) in columns"
+                        v-for="(label, propertyName, index) in columns"
                         :key="propertyName"
+                        :class="{
+                            optional: index > 1
+                        }"
                     >{{label}}</th>
                 </tr>
             </thead>
@@ -47,9 +50,12 @@
                     :class="row.availability"
                 >
                     <td
-                        v-for="(label, propertyName) in columns"
+                        v-for="(label, propertyName, index) in columns"
                         :key="propertyName"
-                        :class="propertyName"
+                        :class="{
+                            optional: index > 1,
+                            [propertyName]: true
+                        }"
                     >
                         <command-slot
                             v-if="propertyName === 'name'"
@@ -61,9 +67,9 @@
                         <span
                             v-else-if="propertyName === 'ingredients'"
                         >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
-                        <span
+                        <span 
                             v-else
-                        >{{row[propertyName]}}</span>
+                        >{{patternMap[row.pattern][propertyName]}}</span>
                     </td>
                 </tr>
             </tbody>

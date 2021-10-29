@@ -126,7 +126,7 @@ button.character-checkboxes {
     width: 1.75em; 
     height: 1.75em; 
     background-image: url("command_icons.png");
-    background-size: 1000%;
+    background-size: 1100%;
     overflow: hidden;
     color: rgba(0,0,0,0);
 }
@@ -135,7 +135,7 @@ button.character-checkboxes {
 /*           Command Table           */
 /* ================================= */
 #command-list {
-    width: 500px;
+    width: 1200px;
     border-collapse: collapse;
     border: 2px solid #000;
 }
