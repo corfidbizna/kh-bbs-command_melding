@@ -1,3 +1,8 @@
+// Use this to make a deep clone of any data. 
+var jsonClone = function(data) {
+    return JSON.parse(JSON.stringify(data));
+};
+
 // ==================================
 //              Patterns
 // ==================================
@@ -75,7 +80,7 @@ var commandPatternMap = {
     },
     G: {
         pattern: "G",
-        shimmering: "Blizzard",
+        shimmering: "Blizzard Screen",
         fleeting: "Attack Haste",
         pulsing: "Leaf Bracer",
         wellspring: "Air Combo Plus",
@@ -216,6 +221,7 @@ var prizeAbilities = [
 
 var statsAbilities = [
     {
+        type: "Stats",
         name: "HP Boost",
         nameJP: "HPアップ",
         number: 3,
@@ -223,6 +229,7 @@ var statsAbilities = [
         crystal: "Soothing"
     },
     {
+        type: "Stats",
         name: "Fire Boost",
         nameJP: "ファイアアップ",
         number: 3,
@@ -230,6 +237,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Blizzard Boost",
         nameJP: "ブリザドアップ",
         number: 3,
@@ -237,6 +245,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Thunder Boost",
         nameJP: "サンダーアップ",
         number: 3,
@@ -244,6 +253,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Cure Boost",
         nameJP: "ケアルアップ",
         number: 3,
@@ -251,6 +261,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Item Boost",
         nameJP: "アイテムアップ",
         number: 3,
@@ -258,6 +269,7 @@ var statsAbilities = [
         crystal: "Soothing"
     },
     {
+        type: "Stats",
         name: "Attack Haste",
         nameJP: "アタックヘイスト",
         number: 5,
@@ -265,6 +277,7 @@ var statsAbilities = [
         crystal: "Fleeting"
     },
     {
+        type: "Stats",
         name: "Magic Haste",
         nameJP: "マジックヘイスト",
         number: 5,
@@ -272,6 +285,7 @@ var statsAbilities = [
         crystal: "Fleeting"
     },
     {
+        type: "Stats",
         name: "Combo F Boost",
         nameJP: "コンボFアップ",
         number: 2,
@@ -279,6 +293,7 @@ var statsAbilities = [
         crystal: "Pulsing"
     },
     {
+        type: "Stats",
         name: "Finish Boost",
         nameJP: "コマンドFアップ",
         number: 2,
@@ -286,6 +301,7 @@ var statsAbilities = [
         crystal: "Pulsing"
     },
     {
+        type: "Stats",
         name: "Fire Screen",
         nameJP: "ファイアガード",
         number: 2,
@@ -293,6 +309,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Blizzard Screen",
         nameJP: "ブリザドガード",
         number: 2,
@@ -300,6 +317,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Thunder Screen",
         nameJP: "サンダーガード",
         number: 2,
@@ -307,6 +325,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Dark Screen",
         nameJP: "ダークガード",
         number: 2,
@@ -314,6 +333,7 @@ var statsAbilities = [
         crystal: "Shimmering"
     },
     {
+        type: "Stats",
         name: "Reload Boost",
         nameJP: "リロードブースト",
         number: 1,
@@ -321,6 +341,7 @@ var statsAbilities = [
         crystal: "Fleeting"
     },
     {
+        type: "Stats",
         name: "Defender",
         nameJP: "ディフェンダー",
         number: 1,
@@ -331,6 +352,7 @@ var statsAbilities = [
 
 var supportAbilities = [
     {
+        type: "Support",
         name: "Zero EXP",
         nameJP: "EXPゼロ",
         number: 1,
@@ -338,6 +360,7 @@ var supportAbilities = [
         crystal: "N/A"
     },
     {
+        type: "Support",
         name: "Combo Plus",
         nameJP: "コンボプラス",
         number: 3,
@@ -345,6 +368,7 @@ var supportAbilities = [
         crystal: "Wellspring"
     },
     {
+        type: "Support",
         name: "Air Combo Plus",
         nameJP: "エアコンボプラス",
         number: 3,
@@ -352,6 +376,7 @@ var supportAbilities = [
         crystal: "Wellspring"
     },
     {
+        type: "Support",
         name: "EXP Chance",
         nameJP: "EXPチャンス",
         number: 1,
@@ -359,6 +384,7 @@ var supportAbilities = [
         crystal: "Abounding"
     },
     {
+        type: "Support",
         name: "EXP Walker",
         nameJP: "EXPウォーク",
         number: 1,
@@ -366,6 +392,7 @@ var supportAbilities = [
         crystal: "Abounding"
     },
     {
+        type: "Support",
         name: "Damage Syphon",
         nameJP: "ダメージアスピル",
         number: 1,
@@ -373,6 +400,7 @@ var supportAbilities = [
         crystal: "Soothing"
     },
     {
+        type: "Support",
         name: "Second Chance",
         nameJP: "ラストリーヴ",
         number: "1",
@@ -380,6 +408,7 @@ var supportAbilities = [
         crystal: "Pulsing"
     },
     {
+        type: "Support",
         name: "Once More",
         nameJP: "コンボリーヴ",
         number: 1,
@@ -387,6 +416,7 @@ var supportAbilities = [
         crystal: "Wellspring "
     },
     {
+        type: "Support",
         name: "Scan",
         nameJP: "ライブラ",
         number: 1,
@@ -394,6 +424,7 @@ var supportAbilities = [
         crystal: "N/A"
     },
     {
+        type: "Support",
         name: "Leaf Bracer",
         nameJP: "リーフベール",
         number: 1,
@@ -407,6 +438,52 @@ var abilities = [].concat(
     statsAbilities,
     supportAbilities
 );
+
+var abilityMap = {
+    '-': {
+        type: "NONE",
+        name: "NONE",
+        nameJP: "",
+        number: 0,
+        description: "",
+        crystal: ""
+    },
+    'Scan': {
+        type: "Support",
+        name: "Scan",
+        nameJP: "ライブラ",
+        number: 1,
+        description: "Displays the HP of the targeted enemy. ",
+        crystal: "N/A"
+    },
+    'Zero EXP': {
+        type: "Support",
+        name: "Zero EXP",
+        nameJP: "EXPゼロ",
+        number: 1,
+        description: "Prevents you from gaining any EXP when you defeat enemies. ",
+        crystal: "N/A"
+    },
+    'Luck Boost': {
+        type: "???",
+        name: "Luck Boost",
+        nameJP: "",
+        number: 0,
+        description: "",
+        crystal: "Abounding"
+    },
+    'Reload Haste': {
+        type: "???",
+        name: "Reload Haste",
+        nameJP: "",
+        number: 0,
+        description: "",
+        crystal: "Fleeting"
+    }
+};
+abilities.forEach(function(ability) {
+    abilityMap[ability.name] = ability;
+});
 
 // ==================================
 //              Commands
