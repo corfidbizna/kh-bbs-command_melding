@@ -8,7 +8,6 @@ var app = Vue.createApp({
                 Ventus: true, 
                 Aqua: true,
             },
-            abilityMap: abilityMap,
         };
     },
     computed: {
@@ -36,34 +35,14 @@ var app = Vue.createApp({
         filteredCommands: function() {
             var characters = this.characters; 
             var characterNames = Object.keys(characters);
-            var crystalKeys = [
-                "shimmering",
-                "fleeting",
-                "pulsing",
-                "wellspring",
-                "soothing",
-                "hungry",
-                "abounding",
-            ];
-            var patternMap = this.patternMap;
-            var abilityMap = this.abilityMap;
-            var result = jsonClone(this.commands);
-            result = result.filter(function(command) {
+            var result = commands.filter(function(command) {
                 var keep = false;
                 characterNames.forEach(function(characterName) {
                     if (characters[characterName]) {
                         keep = keep || command.availability.includes(characterName);
                     }
-                })
-                return keep;
-            })
-            result.forEach(function(command) {
-                crystalKeys.forEach(function(crystalKey) {
-                    var abilityName = patternMap[command.pattern || '-'][crystalKey];
-                    var ability = abilityMap[abilityName] || {type: 'Blank'};
-                    command[crystalKey] = abilityName;
-                    command[crystalKey + '_type'] = ability.type;
                 });
+                return keep;
             });
             return result;
         },

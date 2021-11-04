@@ -1,8 +1,3 @@
-// Use this to make a deep clone of any data. 
-var jsonClone = function(data) {
-    return JSON.parse(JSON.stringify(data));
-};
-
 // ==================================
 //              Patterns
 // ==================================
@@ -439,6 +434,7 @@ var abilities = [].concat(
     supportAbilities
 );
 
+// Sets up abilities that aren't covered in the melding system. 
 var abilityMap = {
     '-': {
         type: "NONE",
@@ -1435,7 +1431,7 @@ var attackCommands = [
         availability: ['Aqua']
     }
 ];
-attackCommands.forEach(function (item) {
+attackCommands.forEach(function(item) {
     item.category = 'battle';
 })
 
@@ -2513,7 +2509,7 @@ var magicCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     }
 ];
-magicCommands.forEach(function (item) {
+magicCommands.forEach(function(item) {
     item.category = 'battle';
 })
 
@@ -2743,7 +2739,7 @@ var actionCommands = [
         availability: ['Aqua']
     }
 ];
-actionCommands.forEach(function (item) {
+actionCommands.forEach(function(item) {
     item.category = 'action';
 })
 
@@ -2877,7 +2873,7 @@ var shotlockCommands = [
         availability: ['Terra', 'Ventus', 'Aqua']
     }
 ];
-shotlockCommands.forEach(function (item) {
+shotlockCommands.forEach(function(item) {
     item.category = 'shotlock';
 })
 
@@ -2887,3 +2883,36 @@ var commands = [].concat(
     actionCommands,
     shotlockCommands
 );
+
+// ==================================
+//       Enrichment Functions
+// ==================================
+
+// Use this to make a deep clone of any data. 
+var jsonClone = function(data) {
+    return JSON.parse(JSON.stringify(data));
+};
+
+// Expands the "pattern" aspect of var commands, 
+// defining the specific abilities associated
+// with a crystal and what type of ability it is. 
+var crystalKeys = [
+    "shimmering",
+    "fleeting",
+    "pulsing",
+    "wellspring",
+    "soothing",
+    "hungry",
+    "abounding",
+];
+commands.forEach(function(command) {
+    crystalKeys.forEach(function(crystalKey) {
+        var abilityName = commandPatternMap[command.pattern || '-'][crystalKey];
+        var ability = abilityMap[abilityName] || {type: 'Blank'};
+        command[crystalKey] = abilityName;
+        command[crystalKey + '_type'] = ability.type;
+    });
+});
+
+
+
