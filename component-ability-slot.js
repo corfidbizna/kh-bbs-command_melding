@@ -13,8 +13,11 @@ app.component('ability-slot', {
         <div class="ability-slot">
             <span
                 class="ability-slot-box"
+                :class="type"
             >
-                <span>{{name}}</span>
+                <span
+                    class="ability-slot-text"
+                >{{name}}</span>
             </span>
             <command-type-icon
                 :icon="'ability-' + type.toLowerCase()"

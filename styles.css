@@ -112,7 +112,7 @@ button.character-checkboxes {
     background: linear-gradient(135deg, #FFF6 0.375em, transparent 0.5em);
     height: 1.5em;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1em;
     line-height: 1.5em;
     font-weight: 600;
     text-shadow: 0.075em 0.075em #000;
@@ -145,16 +145,64 @@ button.character-checkboxes {
     background: linear-gradient(0deg, #999 0, #000 100%);
     height: 1.5em;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 600;
     text-shadow: 0.075em 0.075em #000;
-    padding-left: 1.75em; 
+    padding-left: 1.5em; 
     border-radius: 0.75em;
+}
+
+.ability-slot-box::before {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    background: linear-gradient(
+        90deg,
+        #DDD0 0, 
+        #DDDF 10%, 
+        #DDDF 95%, 
+        #DDD0 100%
+    );
+    height: 0.08em;
+    left: 0.41em;
+    right: 0.41em;
+}
+.ability-slot-box.Prize::before {
+    background: linear-gradient(
+        90deg,
+        #DD00 0, 
+        #DD0F 10%, 
+        #DD0F 95%, 
+        #DD00 100%
+    );
+}
+.ability-slot-box.Stats::before {
+    background: linear-gradient(
+        90deg,
+        #2BE0 0, 
+        #2BEF 10%, 
+        #2BEF 95%, 
+        #2BE0 100%
+    );
+}
+.ability-slot-box.Support::before {
+    background: linear-gradient(
+        90deg,
+        #E220 0, 
+        #E22F 10%, 
+        #E22F 95%, 
+        #E220 100%
+    );
+}
+.ability-slot-text {
+    position: relative;
 }
 .ability-slot .overlap {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0.1em;
+    left: 0.1em;
+    font-size: 0.8em;
 }
 
 /* ================================= */
