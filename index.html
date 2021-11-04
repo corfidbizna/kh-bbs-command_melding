@@ -68,11 +68,11 @@
                         <span
                             v-else-if="propertyName === 'ingredients'"
                         >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
-                        <span 
-                            v-else
-                            class="ability-slot"
-                            :class="row[propertyName + '_type']"
-                        >{{row[propertyName]}}</span>
+                        <ability-slot 
+                            v-else-if="row[propertyName]"
+                            :type="row[propertyName + '_type']"
+                            :name="row[propertyName]"
+                        ></ability-slot>
                     </td>
                 </tr>
             </tbody>
@@ -83,6 +83,7 @@
     <script src="index.js"></script>
     <script src="component-command-type-icon.js"></script>
     <script src="component-command-slot.js"></script>
+    <script src="component-ability-slot.js"></script>
     <script>var mountedApp = app.mount('#app');</script>
 </body>
 </html>

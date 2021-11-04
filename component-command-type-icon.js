@@ -6,10 +6,10 @@ var iconIndexes = {
     reprisal: 4,
     shotlock: 5,
     crown: 6,
-    abilityPrize: 7,
-    abilityStat: 8,
-    abilitySupport: 9,
-    abilityBlank: 10,
+    'ability-prize': 7,
+    'ability-stats': 8,
+    'ability-support': 9,
+    'ability-blank': 10,
 };
 app.component('command-type-icon', {
     props: {
