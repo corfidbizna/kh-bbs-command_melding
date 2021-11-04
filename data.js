@@ -461,7 +461,7 @@ var abilityMap = {
         crystal: "N/A"
     },
     'Luck Boost': {
-        type: "???",
+        type: "Blank",//???
         name: "Luck Boost",
         nameJP: "",
         number: 0,
@@ -469,7 +469,7 @@ var abilityMap = {
         crystal: "Abounding"
     },
     'Reload Haste': {
-        type: "???",
+        type: "Blank",//???
         name: "Reload Haste",
         nameJP: "",
         number: 0,
