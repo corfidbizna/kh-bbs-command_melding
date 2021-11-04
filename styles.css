@@ -154,26 +154,26 @@ button.character-checkboxes {
 
 .ability-slot-box::before {
     display: block;
-    content: '';
     position: absolute;
-    bottom: 0.1em;
+    bottom: 0.15em;
+    left: 0.41em;
+    right: 0.41em;
+    height: 0.06em;
+    content: '';
     background: linear-gradient(
         90deg,
         #DDD0 0, 
         #DDDF 10%, 
-        #DDDF 95%, 
+        #DDDF 85%, 
         #DDD0 100%
     );
-    height: 0.08em;
-    left: 0.41em;
-    right: 0.41em;
 }
 .ability-slot-box.Prize::before {
     background: linear-gradient(
         90deg,
         #DD00 0, 
         #DD0F 10%, 
-        #DD0F 95%, 
+        #DD0F 85%, 
         #DD00 100%
     );
 }
@@ -182,7 +182,7 @@ button.character-checkboxes {
         90deg,
         #2BE0 0, 
         #2BEF 10%, 
-        #2BEF 95%, 
+        #2BEF 85%, 
         #2BE0 100%
     );
 }
@@ -191,7 +191,7 @@ button.character-checkboxes {
         90deg,
         #E220 0, 
         #E22F 10%, 
-        #E22F 95%, 
+        #E22F 85%, 
         #E220 100%
     );
 }
