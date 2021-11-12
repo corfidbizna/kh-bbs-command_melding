@@ -230,6 +230,41 @@ button.character-checkboxes {
     left: 0.1em;
     font-size: 0.8em;
 }
+.ability-slot-slots {
+    position: absolute;
+    top: 0.1em;
+    right: 0.2em;
+    font-size: 0.8em;
+}
+.ability-slot-slots > span {
+    display: inline-block;
+    font-size: 1.5em;
+    width: 1em;
+    height: 1em;
+    vertical-align: top;
+    border-radius: 50%;
+    border: 0.12em solid transparent;
+    margin-top: 0.1em;
+    margin-right: 0.1em;
+}
+.ability-slot-slots > span.full {
+    background-color: #DB0;
+    border-color: #FF0;
+    border-width: 0.05em;
+}
+.ability-slot-slots > span.partial {
+    background-color: #5AD;
+    border-color: #6BE;
+    border-width: 0.05em;
+}
+.ability-slot-slots > span.empty {
+    background-color: #000;
+    border-color: #888;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.2em;
+    margin-left: 0.1em;
+}
 
 /* ================================= */
 /*           Command Icons           */
@@ -251,7 +286,8 @@ button.character-checkboxes {
     background-color: #666;
     border-collapse: collapse;
     width: 600px;
-    height: 600px;
+    min-height: 100px;
+    max-height: calc(100vh - 220px);
     overflow-y: scroll;
     transform: scaleX(-1);
 }

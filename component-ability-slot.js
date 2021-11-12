@@ -8,6 +8,27 @@ app.component('ability-slot', {
             type: String,
             required: false
         },
+        slots: {
+            type: Array,
+            required: false
+        }
+    },
+    computed: {
+        computedSlots: function() {
+            var result = [
+                'spacer',
+                'spacer',
+                'spacer',
+                'spacer',
+                'spacer'
+            ];
+            if (this.slots) {
+                this.slots.forEach(function(value, index) {
+                    result[index] = value;
+                });
+            }
+            return result; 
+        }
     },
     template: /* html */ `
         <div class="ability-slot">
@@ -23,6 +44,15 @@ app.component('ability-slot', {
                 :icon="'ability-' + type.toLowerCase()"
                 class="overlap"
             ></command-type-icon>
+            <span 
+                v-if="slots"
+                class="ability-slot-slots"
+            >
+                <span
+                    v-for="(item) in computedSlots"
+                    :class="item"
+                ></span>
+            </span>
         </div>
     `
 });
