@@ -32,6 +32,25 @@
                 @click="resetCharacterFilter()"
             >X</button>
         </div>
+        <div class="crystal-filter">
+            <label 
+                v-for="(label, propertyName) in crystals"
+                :key="propertyName"
+                class="crystal-radio-buttons"
+                :class="{
+                    active: propertyName === activeCrystal,
+                    [propertyName]: true,
+                }"
+            >
+                <input 
+                    type="radio"
+                    name="crystal-filter"
+                    :value="propertyName"
+                    v-model="activeCrystal"
+                />
+                <span>{{label}}</span>
+            </label>
+        </div>
         <div class="command-table-frame">
             <table id="command-list">
                 <thead>
@@ -40,7 +59,8 @@
                             v-for="(label, propertyName, index) in columns"
                             :key="propertyName"
                             :class="{
-                                optional: index > 1
+                                crystal: index > 1,
+                                [propertyName]: true
                             }"
                         >{{label}}</th>
                     </tr>
@@ -55,7 +75,7 @@
                             v-for="(label, propertyName, index) in columns"
                             :key="propertyName"
                             :class="{
-                                optional: index > 1,
+                                crystal: index > 1,
                                 [propertyName]: true
                             }"
                         >

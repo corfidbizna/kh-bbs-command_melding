@@ -57,7 +57,7 @@ h1 {
 /*    Character Filter Checkboxes    */
 /* ================================= */
 .character-filter {
-    padding-bottom: 32px;
+    padding-bottom: 12px;
 }
 .character-checkboxes {
     display: inline-block;
@@ -88,6 +88,31 @@ button.character-checkboxes {
 }
 .character-checkboxes.active.Aqua {
     background-color: #44F8;
+}
+
+/* ================================= */
+/*      Crystal Filter R. Buttons    */
+/* ================================= */
+
+.crystal-filter {
+    padding: 8px;
+}
+.crystal-radio-buttons {
+    display: inline-block;
+    width: 90px;
+    background-color: #444;
+    padding: 4px 8px;
+    margin: 2px; 
+    border-radius: 4px;
+    line-height: 1.5em;
+    font-size: 1rem;
+    text-align: center;
+}
+.crystal-radio-buttons.active {
+    background-color: #888;
+}
+.crystal-radio-buttons input {
+    display: none;
 }
 
 /* ================================= */
@@ -225,7 +250,7 @@ button.character-checkboxes {
 .command-table-frame {
     background-color: #666;
     border-collapse: collapse;
-    width: 1400px;
+    width: 600px;
     height: 600px;
     overflow-y: scroll;
     transform: scaleX(-1);
@@ -257,6 +282,14 @@ button.character-checkboxes {
 }
 #command-list th {
     background-color: #777;
+}
+#command-list th.name,
+#command-list td.name {
+    width: 35%;
+}
+#command-list th.crystal,
+#command-list td.crystal {
+    width: 25%;
 }
 /* Row Color based on Availability */ 
 tr.Terra {

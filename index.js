@@ -8,6 +8,16 @@ var app = Vue.createApp({
                 Ventus: true, 
                 Aqua: true,
             },
+            crystals: {
+                shimmering: 'Shimmering',
+                fleeting: 'Fleeting',
+                pulsing: 'Pulsing',
+                wellspring: 'Wellspring',
+                soothing: 'Soothing',
+                hungry: 'Hungry',
+                abounding: 'Abounding',
+            },
+            activeCrystal: 'shimmering',
         };
     },
     computed: {
@@ -15,7 +25,8 @@ var app = Vue.createApp({
             return this.commands.length;
         },
         columns: function() {
-            return {
+            var crystal = this.activeCrystal;
+            var result = {
                 //type: 'Type',
                 //type: '',
                 name: 'Name',
@@ -23,14 +34,9 @@ var app = Vue.createApp({
                 //percent: 'Craft %',
                 //pattern: '',
                 //availability: 'Availability'
-                shimmering: "Shimmering",
-                fleeting: "Fleeting",
-                pulsing: "Pulsing",
-                wellspring: "Wellspring",
-                soothing: "Soothing",
-                hungry: "Hungry",
-                abounding: "Abounding"
             };
+            result[crystal] = this.crystals[crystal];
+            return result;
         },
         filteredCommands: function() {
             var characters = this.characters; 
