@@ -17,9 +17,8 @@
                 :key="item.name"
             >
                 <ability-slot
-                    :name="item.name"
-                    :type="item.type"
-                    :slots="item.slots"
+                    :ability="item"
+                    :display-slots="true"
                     :title="item.description"
                 ></ability-slot>
             </div>
@@ -105,8 +104,7 @@
                             >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
                             <ability-slot 
                                 v-else-if="row[propertyName]"
-                                :type="row[propertyName + '_type']"
-                                :name="row[propertyName]"
+                                :ability="abilityMap[row[propertyName]]"
                             ></ability-slot>
                         </td>
                     </tr>

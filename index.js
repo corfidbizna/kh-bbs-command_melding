@@ -4,11 +4,30 @@ var app = Vue.createApp({
             commands: commands,
             patternMap: commandPatternMap,
             abilities: abilities,
-            mutableAbilities: jsonClone([
-                abilityMap['Treasure Magnet'],
-                abilityMap['Fire Boost'],
-                abilityMap['Once More'],
-            ]),
+            abilityMap: abilityMap,
+            mutableAbilities: [
+                Object.assign(
+                    {
+                        slotsFull: 5, 
+                        slotTargeted: true,
+                    },
+                    abilityMap['Treasure Magnet']
+                ),
+                Object.assign(
+                    {
+                        slotsFull: 1, 
+                        slotTargeted: true,
+                    },
+                    abilityMap['Fire Boost']
+                ),
+                Object.assign(
+                    {
+                        slotsFull: 1, 
+                        slotTargeted: false,
+                    },
+                    abilityMap['Once More']
+                ),
+            ],
             characters: {
                 Terra: true, 
                 Ventus: true, 

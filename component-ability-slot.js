@@ -1,21 +1,19 @@
 app.component('ability-slot', {
     props: {
-        type: {
-            type: String,
+        ability: {
+            type: Object,
             required: true
         },
-        name: {
-            type: String,
+        displaySlots: {
+            type: Boolean,
             required: false
         },
-        slots: {
-            // Slots are made from an array of strings. 
-            type: Array,
-            required: false
-        }
     },
     computed: {
         computedSlots: function() {
+            var max = this.ability.number;
+            var current = this.ability.slotsFull;
+            var blue = this.ability.slotTargeted;
             // Valid strings are: 'full','partial','empty', and 'spacer'. 
             var result = [
                 'spacer',
@@ -24,10 +22,14 @@ app.component('ability-slot', {
                 'spacer',
                 'spacer'
             ];
-            if (this.slots) {
-                this.slots.forEach(function(value, index) {
-                    result[index] = value;
-                });
+            for (var i = 0; i < max; i++) {
+                result[i] = 'empty';
+            }
+            for (var i = 0; i < current && i < max; i++) {
+                result[i] = 'full';
+            }
+            if (blue && current < max) {
+                result[current] = 'partial';
             }
             return result; 
         }
@@ -36,18 +38,18 @@ app.component('ability-slot', {
         <div class="ability-slot">
             <span
                 class="ability-slot-box"
-                :class="type"
+                :class="ability.type"
             >
                 <span
                     class="ability-slot-text"
-                >{{name}}</span>
+                >{{ability.name}}</span>
             </span>
             <command-type-icon
-                :icon="'ability-' + type.toLowerCase()"
+                :icon="'ability-' + ability.type.toLowerCase()"
                 class="overlap"
             ></command-type-icon>
             <span 
-                v-if="slots"
+                v-if="displaySlots"
                 class="ability-slot-slots"
             >
                 <span
