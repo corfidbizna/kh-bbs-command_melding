@@ -478,6 +478,11 @@ var abilityMap = {
     }
 };
 abilities.forEach(function(ability) {
+    var slots = [];
+    for (var i = 0; i < ability.number; i++) {
+        slots.push('empty');
+    }
+    ability.slots = slots;
     abilityMap[ability.name] = ability;
 });
 

@@ -15,12 +15,25 @@ body {
     font-family: 'Saira Condensed', sans-serif;
     color: #FFF;
     background-color: #000;
-    background-image: repeating-linear-gradient( 
+    background-image: linear-gradient(
+        to right,
+        #001 0%,
+        #007 18%,
+        #003 18%,
+        #00A 27%,
+        #005 27%,
+        #008 31%,
+        #000 31%,
+        #000 41%,
+        #006 80%,
+        #000 80%
+    );
+    /* background-image: repeating-linear-gradient( 
         to right, 
         #000 0, 
         #006 100%
     );
-    background-size: 20rem 100%;
+    background-size: 20rem 100%; */
     /* animation-name: slide-background; */
     animation-duration: 7.0s;
     animation-iteration-count: infinite;
@@ -38,7 +51,7 @@ body {
 /* ================================= */
 /*              Labels               */
 /* ================================= */
-h1 {
+h1, h2 {
     background: linear-gradient(90deg, #08195c 0%, #00E 100%);
     height: 1.9em;
     width: 900px;
@@ -51,6 +64,9 @@ h1 {
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     box-shadow: 0.15em 0.2em #000;
+}
+h2 {
+    font-size: 1.5em;
 }
 
 /* ================================= */
@@ -266,6 +282,20 @@ button.character-checkboxes {
     margin-left: 0.1em;
 }
 
+
+/* ================================= */
+/*           Ability Table           */
+/* ================================= */
+.ability-list {
+    display: block;
+    background-color: #111;
+    width: 250px;
+    padding: 8px;
+    box-shadow: 
+        inset -0.1em -0.1em 0.1em #0006, 
+        inset 0.1em 0.1em 0.1em #FFF6;
+}
+
 /* ================================= */
 /*           Command Icons           */
 /* ================================= */
@@ -287,12 +317,11 @@ button.character-checkboxes {
     border-collapse: collapse;
     width: 600px;
     min-height: 100px;
-    max-height: calc(100vh - 220px);
+    max-height: calc(100vh - 390px);
     overflow-y: scroll;
     transform: scaleX(-1);
 }
 #command-list {
-    background-color: #666;
     width: 100%;
     height: 200px;
     overflow-y: scroll;
@@ -307,6 +336,7 @@ button.character-checkboxes {
     z-index: 10;
 }
 #command-list tbody {
+    background-color: #666;
     border-bottom: 8px solid #666;
     border-top: 8px solid #666;
 }
@@ -318,6 +348,7 @@ button.character-checkboxes {
 }
 #command-list th {
     background-color: #777;
+    margin: 12px;
 }
 #command-list th.name,
 #command-list td.name {

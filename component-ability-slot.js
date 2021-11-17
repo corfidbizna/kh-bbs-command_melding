@@ -9,12 +9,14 @@ app.component('ability-slot', {
             required: false
         },
         slots: {
+            // Slots are made from an array of strings. 
             type: Array,
             required: false
         }
     },
     computed: {
         computedSlots: function() {
+            // Valid strings are: 'full','partial','empty', and 'spacer'. 
             var result = [
                 'spacer',
                 'spacer',

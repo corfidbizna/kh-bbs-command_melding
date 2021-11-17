@@ -3,6 +3,12 @@ var app = Vue.createApp({
         return {
             commands: commands,
             patternMap: commandPatternMap,
+            abilities: abilities,
+            mutableAbilities: jsonClone([
+                abilityMap['Treasure Magnet'],
+                abilityMap['Fire Boost'],
+                abilityMap['Once More'],
+            ]),
             characters: {
                 Terra: true, 
                 Ventus: true, 
@@ -41,7 +47,7 @@ var app = Vue.createApp({
         filteredCommands: function() {
             var characters = this.characters; 
             var characterNames = Object.keys(characters);
-            var result = commands.filter(function(command) {
+            var result = this.commands.filter(function(command) {
                 var keep = false;
                 characterNames.forEach(function(characterName) {
                     if (characters[characterName]) {

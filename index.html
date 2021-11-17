@@ -11,6 +11,20 @@
     <div id="app">
         <!--- <h1>Commands - {{filteredCommands.length}} out of {{numberOfCommands}}</h1> --->
         <h1>Command Melding Planner</h1>
+        <div class="ability-list">
+            <div
+                v-for="item in mutableAbilities"
+                :key="item.name"
+            >
+                <ability-slot
+                    :name="item.name"
+                    :type="item.type"
+                    :slots="item.slots"
+                    :title="item.description"
+                ></ability-slot>
+            </div>
+        </div>
+        <h2>Command List</h2>
         <div class="character-filter">
             <label 
                 v-for="(value, character) in characters"
@@ -50,33 +64,6 @@
                 />
                 <span>{{label}}</span>
             </label>
-        </div>
-        <div 
-            class="ability-slot-test"
-            style="
-                font-size: 4em;
-                margin: 8px;
-            "
-        >
-            <ability-slot
-                name="The Boringest"
-                type="Blank"
-            ></ability-slot>
-            <ability-slot
-                name="Empty Ability"
-                type="Prize"
-                :slots="['full','partial','empty','empty',]"
-            ></ability-slot>
-            <ability-slot
-                name="Empty Ability 2"
-                type="Prize"
-                :slots="['empty','empty','empty',]"
-            ></ability-slot>
-            <ability-slot
-                name="Zero EXP"
-                type="Support"
-                :slots="['full']"
-            ></ability-slot>
         </div>
         <div class="command-table-frame">
             <table id="command-list">
