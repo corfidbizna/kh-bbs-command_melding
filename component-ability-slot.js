@@ -57,7 +57,10 @@ app.component('ability-slot', {
         },
     },
     template: /* html */ `
-        <div class="ability-slot">
+        <div 
+            class="ability-slot"
+            :title="ability.description"
+        >
             <span
                 class="ability-slot-box"
                 :class="ability.type"

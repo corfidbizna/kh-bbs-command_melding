@@ -11,19 +11,59 @@
     <div id="app">
         <!--- <h1>Commands - {{filteredCommands.length}} out of {{numberOfCommands}}</h1> --->
         <h1>Command Melding Planner</h1>
-        <div class="ability-list">
-            <div class="ability-list-scrolling-container">
-                <div class="ability-list-container">
-                    <div
-                        v-for="(item, index) in mutableAbilities"
-                        :key="item.name"
-                    >
-                        <ability-slot
-                            :ability="item"
-                            :display-slots="true"
-                            :title="item.description"
-                            @update:ability="updateAbility($event, index)"
-                        ></ability-slot>
+        <div>
+            <!-- <div class="crafting-container">
+                <div class="crafting-recipe">
+                    <h3>Recipe: </h3>
+                    <command-slot
+                        name="Quick Blitz"
+                        category="battle"
+                        type="Magic"
+                    ></command-slot>
+                    <command-slot
+                        name="Quick Blitz 2"
+                        category="battle"
+                        type="Attack"
+                    ></command-slot>
+                    <ability-slot
+                        :ability="{
+                            type: 'Blank',
+                            name: 'Wellspring',
+                            number: 1,
+                            description: 'Displays the HP of the targeted enemy. ',
+                        }"
+                    ></ability-slot>
+                </div>
+                <div class="crafting-result">
+                    <h3>Result: </h3>
+                    <command-slot
+                        name="Blitz"
+                        category="battle"
+                        type="Attack"
+                    ></command-slot>
+                    <ability-slot
+                        :ability="{
+                            type: 'Support',
+                            name: 'Scan',
+                            number: 1,
+                            description: 'Displays the HP of the targeted enemy. ',
+                        }"
+                    ></ability-slot>
+                </div>
+            </div> -->
+            <div class="ability-list">
+                <div class="ability-list-scrolling-container">
+                    <div class="ability-list-container">
+                        <div
+                            v-for="(item, index) in mutableAbilities"
+                            :key="item.name"
+                        >
+                            <ability-slot
+                                :ability="item"
+                                :display-slots="true"
+                                @update:ability="updateAbility($event, index)"
+                            ></ability-slot>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,7 +149,13 @@
                             >{{row.ingredients[0]}}, {{row.ingredients[1]}}</span>
                             <ability-slot 
                                 v-else-if="row[propertyName]"
-                                :ability="abilityMap[row[propertyName]]"
+                                :ability="(
+                                    mutableAbilityMap[row[propertyName]]
+                                    || abilityMap[row[propertyName]]
+                                )"
+                                :class="{
+                                    highlighted: (mutableAbilityMap[row[propertyName]] || {}).slotTargeted,
+                                }"
                             ></ability-slot>
                         </td>
                     </tr>

@@ -14,7 +14,7 @@ app.component('command-slot', {
         },
         percent: {
             type: Number,
-            required: true
+            required: false
         }
     },
     template: /* html */ `
@@ -25,6 +25,7 @@ app.component('command-slot', {
             >
                 <span>{{name}}</span>
                 <span
+                    v-if="percent !== undefined"
                     class="percentage"
                 >
                     <span
