@@ -181,6 +181,7 @@ button.character-checkboxes {
 /* ================================= */
 .ability-slot {
     position: relative; 
+    user-select: none;
 } 
 .ability-slot-box {
     display: block;
@@ -193,7 +194,10 @@ button.character-checkboxes {
     padding-left: 1.5em; 
     border-radius: 0.75em;
 }
-
+.ability-slot-box.targeted {
+    background: linear-gradient(0deg, #AAA 0, #222 100%);
+    /* box-shadow: 0px 0px 0px 2px #D00; */
+}
 .ability-slot-box::before {
     display: block;
     position: absolute;
@@ -252,6 +256,7 @@ button.character-checkboxes {
     right: 0.2em;
     font-size: 0.8em;
 }
+/* Slot Graphics and Container */
 .ability-slot-slots > span {
     display: inline-block;
     font-size: 1.5em;

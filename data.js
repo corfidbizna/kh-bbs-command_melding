@@ -478,8 +478,8 @@ var abilityMap = {
     }
 };
 abilities.forEach(function(ability) {
-    //ability.slotsFull = 0; // 'full'
-    //ability.slotTargeted = false; // 'partial'
+    ability.slotsFull = 0; // 'full'
+    ability.slotTargeted = false; // 'partial'
     abilityMap[ability.name] = ability;
 });
 

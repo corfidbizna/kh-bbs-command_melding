@@ -34,14 +34,40 @@ app.component('ability-slot', {
             return result; 
         }
     },
+    methods: {
+        emitChange: function(change) {
+            this.$emit('update:ability', Object.assign(
+                {}, 
+                this.ability,
+                change,
+            ));
+        },
+        updateSlots: function(slotIndex) {
+            var current = this.ability.slotsFull;
+            this.emitChange({
+                slotTargeted: false,
+                slotsFull: slotIndex === current - 1 ? slotIndex: slotIndex + 1,
+            });
+        },
+        toggleTargeted: function() {
+            var newState = !this.ability.slotTargeted;
+            this.emitChange({
+                slotTargeted: newState,
+            });
+        },
+    },
     template: /* html */ `
         <div class="ability-slot">
             <span
                 class="ability-slot-box"
                 :class="ability.type"
+                :class="{
+                    targeted: ability.slotTargeted,
+                }"
             >
                 <span
                     class="ability-slot-text"
+                    @click="toggleTargeted"
                 >{{ability.name}}</span>
             </span>
             <command-type-icon
@@ -53,8 +79,9 @@ app.component('ability-slot', {
                 class="ability-slot-slots"
             >
                 <span
-                    v-for="(item) in computedSlots"
+                    v-for="(item, index) in computedSlots"
                     :class="item"
+                    @click="updateSlots(index)"
                 ></span>
             </span>
         </div>

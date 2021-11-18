@@ -13,13 +13,14 @@
         <h1>Command Melding Planner</h1>
         <div class="ability-list">
             <div
-                v-for="item in mutableAbilities"
+                v-for="(item, index) in mutableAbilities"
                 :key="item.name"
             >
                 <ability-slot
                     :ability="item"
                     :display-slots="true"
                     :title="item.description"
+                    @update:ability="updateAbility($event, index)"
                 ></ability-slot>
             </div>
         </div>
