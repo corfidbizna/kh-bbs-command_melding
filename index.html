@@ -54,15 +54,32 @@
             <div class="ability-list">
                 <div class="ability-list-scrolling-container">
                     <div class="ability-list-container">
-                        <div
-                            v-for="(item, index) in mutableAbilities"
-                            :key="item.name"
-                        >
-                            <ability-slot
+                        <div id="crystal-container">
+                            <div
+                                v-for="(item, index) in mutableAbilities"
+                                :key="item.name"
+                            ><ability-slot
+                                :ability="{
+                                    type: 'Blank',
+                                    name: item.crystal,
+                                    number: item.number,
+                                    slotsFull: item.slotsFull,
+                                    description: item.crystal,
+                                }"
+                                class="crystal"
+                            ></ability-slot>
+                            </div>
+                        </div>
+                        <div id="ability-container">
+                            <div
+                                v-for="(item, index) in mutableAbilities"
+                                :key="item.name"
+                            ><ability-slot
                                 :ability="item"
                                 :display-slots="true"
                                 @update:ability="updateAbility($event, index)"
                             ></ability-slot>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -226,6 +226,13 @@ button.character-checkboxes {
     background: linear-gradient(0deg, #AAA 0, #222 100%);
     box-shadow: 0px 0px 0px 2px #DD9;
 }
+.ability-slot-box.full {
+    background: linear-gradient(0deg, #555 0, #000 100%);
+    color: #AAA;
+}
+.command-type-icon.full {
+    filter: brightness(60%);
+}
 .ability-slot-box::before {
     display: block;
     position: absolute;
@@ -322,7 +329,7 @@ button.character-checkboxes {
 .ability-list {
     display: block;
     background-color: #111;
-    width: 270px;
+    width: 470px;
     padding: 2px;
     box-shadow: 
         inset -0.1em -0.1em 0.1em #0006, 
@@ -340,7 +347,15 @@ button.character-checkboxes {
     transform: scaleX(-1);
     margin: 2px;
 }
-.ability-list-container > * {
+#crystal-container {
+    display: inline-block;
+    width: 30%;
+}
+#ability-container {
+    display: inline-block;
+    width: 70%;
+}
+#crystal-container > *, #ability-container > * {
     margin: 2px;
 }
 
@@ -365,7 +380,7 @@ button.character-checkboxes {
     border-collapse: collapse;
     width: 600px;
     min-height: 100px;
-    max-height: calc(100vh - 390px);
+    max-height: calc(100vh - 505px);
     overflow-y: scroll;
     transform: scaleX(-1);
 }

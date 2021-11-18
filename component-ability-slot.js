@@ -65,7 +65,8 @@ app.component('ability-slot', {
                 class="ability-slot-box"
                 :class="ability.type"
                 :class="{
-                    targeted: ability.slotTargeted,
+                    targeted: (ability.slotTargeted && (ability.slotsFull < ability.number)),
+                    full: (ability.slotsFull >= ability.number),
                 }"
             >
                 <span
@@ -76,6 +77,9 @@ app.component('ability-slot', {
             <command-type-icon
                 :icon="'ability-' + ability.type.toLowerCase()"
                 class="overlap"
+                :class="{
+                    full: (ability.slotsFull >= ability.number),
+                }"
             ></command-type-icon>
             <span 
                 v-if="displaySlots"

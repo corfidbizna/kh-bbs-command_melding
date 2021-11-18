@@ -25,7 +25,7 @@ app.component('command-slot', {
             >
                 <span>{{name}}</span>
                 <span
-                    v-if="percent !== undefined"
+                    v-if="percent"
                     class="percentage"
                 >
                     <span
