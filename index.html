@@ -12,19 +12,19 @@
         <!--- <h1>Commands - {{filteredCommands.length}} out of {{numberOfCommands}}</h1> --->
         <h1>Command Melding Planner</h1>
         <div class="ability-list">
-            <div
-                class="ability-list-container"
-            >
-                <div
-                    v-for="(item, index) in mutableAbilities"
-                    :key="item.name"
-                >
-                    <ability-slot
-                        :ability="item"
-                        :display-slots="true"
-                        :title="item.description"
-                        @update:ability="updateAbility($event, index)"
-                    ></ability-slot>
+            <div class="ability-list-scrolling-container">
+                <div class="ability-list-container">
+                    <div
+                        v-for="(item, index) in mutableAbilities"
+                        :key="item.name"
+                    >
+                        <ability-slot
+                            :ability="item"
+                            :display-slots="true"
+                            :title="item.description"
+                            @update:ability="updateAbility($event, index)"
+                        ></ability-slot>
+                    </div>
                 </div>
             </div>
         </div>

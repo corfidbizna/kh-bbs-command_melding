@@ -55,6 +55,13 @@ var app = Vue.createApp({
             });
             return result;
         },
+        mutableAbilityMap: function() {
+            var result = {};
+            this.mutableAbilities.forEach(function(ability) {
+                result[ability.name] = ability;
+            });
+            return result;
+        },
     },
     methods: {
         resetCharacterFilter: function() {
