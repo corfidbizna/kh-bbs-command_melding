@@ -107,7 +107,7 @@
                 @click="resetCharacterFilter()"
             >X</button>
         </div>
-        <div class="crystal-filter">
+        <!-- <div class="crystal-filter">
             <label 
                 v-for="(label, propertyName) in crystals"
                 :key="propertyName"
@@ -125,6 +125,8 @@
                 />
                 <span>{{label}}</span>
             </label>
+        </div> -->
+        <div>
         </div>
         <div class="command-table-frame">
             <table id="command-list">
@@ -137,7 +139,24 @@
                                 crystal: index > 1,
                                 [propertyName]: true
                             }"
-                        >{{label}}</th>
+                        >
+                            <span
+                                v-if="(propertyName === 'name') || (propertyName === 'ingredients')"
+                            >{{label}}</span>
+                            <span
+                                v-else
+                            >
+                                <select
+                                    v-model="activeCrystal"
+                                >
+                                    <option
+                                        v-for="crystal in crystals"
+                                        :key="crystal"
+                                        :value="crystal.toLowerCase()"
+                                    >{{crystal}} Crystal</option>
+                                </select>
+                            </span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
