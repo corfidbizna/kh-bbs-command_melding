@@ -21,6 +21,16 @@ var app = Vue.createApp({
                 abounding: 'Abounding',
             },
             activeCrystal: 'shimmering',
+            commandTypes: {
+                all: 'All',
+                attack: 'Attack',
+                magic: 'Magic',
+                mobility: 'Mobility',
+                block: 'Block',
+                reprisal: 'Reprisal',
+                shotlock: 'Shotlock',
+            },
+            activeCommandType: 'all',
         };
     },
     computed: {
@@ -44,6 +54,7 @@ var app = Vue.createApp({
         filteredCommands: function() {
             var characters = this.characters; 
             var characterNames = Object.keys(characters);
+            var activeCommandType = this.activeCommandType;
             var result = this.commands.filter(function(command) {
                 var keep = false;
                 characterNames.forEach(function(characterName) {
@@ -51,6 +62,9 @@ var app = Vue.createApp({
                         keep = keep || command.availability.includes(characterName);
                     }
                 });
+                if (keep && activeCommandType !== 'all') {
+                    keep = command.type.toLocaleLowerCase() === activeCommandType;
+                }
                 return keep;
             });
             return result;

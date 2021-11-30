@@ -63,8 +63,8 @@ app.component('ability-slot', {
         >
             <span
                 class="ability-slot-box"
-                :class="ability.type"
                 :class="{
+                    [ability.type]: true,
                     targeted: (ability.slotTargeted && (ability.slotsFull < ability.number)),
                     full: (ability.slotsFull >= ability.number),
                 }"
