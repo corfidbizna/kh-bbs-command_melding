@@ -126,6 +126,32 @@
                 <span>{{label}}</span>
             </label>
         </div> -->
+        <div class="command-type-filter">
+            <label 
+                v-for="(label, propertyName) in commandTypes"
+                :key="propertyName"
+                class="command-type-radio-buttons"
+                :class="{
+                    active: propertyName === activeCommandType,
+                    [propertyName]: true,
+                }"
+                :title="label"
+            >
+                <input 
+                    type="radio"
+                    name="command-type-filter"
+                    :value="propertyName"
+                    v-model="activeCommandType"
+                />
+                <span
+                    v-if="propertyName === 'all'"
+                >ALL</span>
+                <command-type-icon
+                    v-else
+                    :icon="label"
+                ></command-type-icon>
+            </label>
+        </div>
         <div>
         </div>
         <div class="command-table-frame">
@@ -143,19 +169,16 @@
                             <span
                                 v-if="(propertyName === 'name') || (propertyName === 'ingredients')"
                             >{{label}}</span>
-                            <span
+                            <select
                                 v-else
+                                v-model="activeCrystal"
                             >
-                                <select
-                                    v-model="activeCrystal"
-                                >
-                                    <option
-                                        v-for="crystal in crystals"
-                                        :key="crystal"
-                                        :value="crystal.toLowerCase()"
-                                    >{{crystal}} Crystal</option>
-                                </select>
-                            </span>
+                                <option
+                                    v-for="crystal in crystals"
+                                    :key="crystal"
+                                    :value="crystal.toLowerCase()"
+                                >{{crystal}} Crystal</option>
+                            </select>
                         </th>
                     </tr>
                 </thead>

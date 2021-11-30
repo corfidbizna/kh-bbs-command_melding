@@ -47,6 +47,21 @@ body {
       background-position-x: 20rem;
     }
   }
+select {
+    border: 0;
+    padding: 2px;
+    background-color: #777;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    color: #FFF;
+}
+select option {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+}
 
 /* ================================= */
 /*              Labels               */
@@ -135,27 +150,28 @@ button.character-checkboxes {
 }
 
 /* ================================= */
-/*      Crystal Filter R. Buttons    */
+/*      Command Type R. Buttons      */
 /* ================================= */
 
-.crystal-filter {
-    padding: 8px;
+.command-type-filter {
+    margin-left: 20px;
+    width: 600px;
+    height: 2em;
 }
-.crystal-radio-buttons {
+.command-type-radio-buttons {
     display: inline-block;
-    width: 90px;
+    vertical-align: top;
+    width: 13%;
+    margin: 0 2px;
+    padding: 4px;
     background-color: #444;
-    padding: 4px 8px;
-    margin: 2px; 
     border-radius: 4px;
-    line-height: 1.5em;
-    font-size: 1rem;
     text-align: center;
 }
-.crystal-radio-buttons.active {
-    background-color: #888;
+.command-type-radio-buttons.active {
+    background-color: #777;
 }
-.crystal-radio-buttons input {
+.command-type-radio-buttons input {
     display: none;
 }
 
@@ -378,7 +394,7 @@ button.character-checkboxes {
     background-color: #666;
     border-collapse: collapse;
     width: 600px;
-    min-height: 100px;
+    min-height: 70px;
     max-height: calc(100vh - 505px);
     overflow-y: scroll;
     transform: scaleX(-1);
