@@ -398,7 +398,7 @@ var supportAbilities = [
         type: "Support",
         name: "Second Chance",
         nameJP: "ラストリーヴ",
-        number: "1",
+        number: 1,
         description: "Ensures you always retain 1 HP after an attack that would otherwise finish you off, unless you are already down to 1 HP. ",
         crystal: "Pulsing"
     },
